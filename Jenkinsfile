@@ -25,7 +25,7 @@ pipeline {
                 sh '''
                 cd app
                 # activate virtual environment before running test
-                bash -c "source .venv/bin/activate
+                bash -c "source .venv/bin/activate"
                 pytest
                 '''
             }
