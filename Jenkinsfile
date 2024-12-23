@@ -22,15 +22,13 @@ pipeline {
         stage('Test') {
             steps {
                 echo "Testing.."
+
                 sh '''
-                pwd
+                cd app
+                # activate virtual environment before running test
+                bash -c "source .venv/bin/activate && pip3 install -r requirements.txt"
+                pytest
                 '''
-                // sh '''
-                // cd app
-                // # activate virtual environment before running test
-                // bash -c "source .venv/bin/activate && pip3 install -r requirements.txt"
-                // pytest
-                // '''
             }
         }
         stage('Deliver') {
