@@ -22,7 +22,9 @@ pipeline {
         stage('Test') {
             steps {
                 echo "Testing.."
+                sh '''
                 pwd
+                '''
                 // sh '''
                 // cd app
                 // # activate virtual environment before running test
